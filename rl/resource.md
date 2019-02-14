@@ -20,3 +20,5 @@
 
 [rl-easy21](https://github.com/yonilev/rl-easy21)
 
+
+[莫烦强化学习实战](https://morvanzhou.github.io/tutorials/machine-learning/ML-practice/RL-build-arm-from-scratch1/)
