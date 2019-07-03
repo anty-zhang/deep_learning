@@ -27,3 +27,5 @@
 *.out
 *.app
 .idea
+
+.ipynb_checkpoints
