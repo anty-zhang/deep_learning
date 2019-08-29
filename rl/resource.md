@@ -22,3 +22,5 @@
 
 
 [莫烦强化学习实战](https://morvanzhou.github.io/tutorials/machine-learning/ML-practice/RL-build-arm-from-scratch1/)
+
+[tensorlayer/tensorlayer](https://github.com/tensorlayer/tensorlayer/tree/master/examples/reinforcement_learning)
