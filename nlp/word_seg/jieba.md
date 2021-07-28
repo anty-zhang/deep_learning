@@ -119,3 +119,7 @@ for w in pseg.cut("我爱北京天安门"):
 北京/ns
 天安门/ns
 ```
+
+# reference
+
+[fxsjy/jieba](https://github.com/fxsjy/jieba)
