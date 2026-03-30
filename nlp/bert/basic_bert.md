@@ -9,7 +9,7 @@ Bert模型可以认为是最近两年NLP领域的集大成者。
 
 ## NLP 四类任务
 
-- 序列标注: 分词/NER/语义标注
+- 序列标注: 分词/NER/语义标注/命名实体识别/词性标注。特点是句子中每个单词要求模型根据上下文都给出一个分类类别。
 
 - 分类任务: 文本分类/情感分析
 
@@ -31,13 +31,15 @@ Bert模型可以认为是最近两年NLP领域的集大成者。
 
 ### Word Embedding历史
 
-- NNLM（神经网络语言模型）。通过上文预测后面接的单词是什么; 同时能得到Word Embedding 副产品
+- NNLM（神经网络语言模型）。通过上文预测后面接的单词是什么; 同时能得到Word Embedding 副产品。
+
+![神经网络语言模型](image.png)
 
 - Word2Vec & Glove
 
 两种训练方法：CBOW + Skip-Gram。
 
-是单纯的训练Word Embedding。
+是单纯的训练Word Embedding；而NNLM的主要任务是学习一个解决语言模型任务的网络结构，即通过前文预测下文。
 
 - 缺点: 多义词的问题无法解决
 
@@ -47,11 +49,20 @@ Bert模型可以认为是最近两年NLP领域的集大成者。
 
 - ELMO的本质思想是：我事先用语言模型学好一个单词的Word Embedding，根据上下文单词的语义去调整单词的Word Embedding表示，这样经过调整后的Word Embedding更能表达在这个上下文中的具体含义，自然也就解决了多义词的问题了。
 
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
 - 缺点：（1）LSTM提取器能力弱于Transformer  （2）拼接方式双向融合特征能力偏弱
 
 ### GPT
 
 - 其实和ELMO是类似的，主要不同在于两点：首先，特征抽取器不是用的RNN，而是用的Transformer，上面提到过它的特征抽取能力要强于RNN，这个选择很明显是很明智的；其次，GPT的预训练虽然仍然是以语言模型作为目标任务，但是采用的是单向的语言模型，所谓“单向”的含义是指：语言模型训练的任务目标是根据 W 单词的上下文去正确预测单词 W ，  之前的单词序列Context-before称为上文，之后的单词序列Context-after称为下文。
+
+![alt text](image-3.png)
+
+
+
 
 ### Bert
 
@@ -59,7 +70,15 @@ Bert模型可以认为是最近两年NLP领域的集大成者。
 
 - Bert最关键两点，一点是特征抽取器采用Transformer；第二点是预训练的时候采用双向语言模型。
 
+![alt text](image-4.png)
+
+
 [从Word Embedding到Bert模型—自然语言处理中的预训练技术发展史](https://zhuanlan.zhihu.com/p/49271699)
 
 [放弃幻想，全面拥抱Transformer：自然语言处理三大特征抽取器（CNN/RNN/TF）比较](https://zhuanlan.zhihu.com/p/54743941)
 
+[深度学习中的注意力模型（2017版）](https://zhuanlan.zhihu.com/p/37601161)
+
+[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+
+[The Annotated Transformer](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
